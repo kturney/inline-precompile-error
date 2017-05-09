@@ -1,0 +1,1 @@
+export { default } from 'inline-precompile-error/components/thing-1';
