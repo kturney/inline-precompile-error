@@ -1,26 +1,23 @@
 # inline-precompile-error
 
-This README outlines the details of collaborating on this Ember addon.
+This is a minimal reproduction of the error:
+```
+Uncaught Error:
+Error: Could not find module `htmlbars-inline-precompile` imported from `dummy/tests/integration/components/thing-1-test` at http://localhost:7357/assets/test-support.
+js, line 6993
+```
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd inline-precompile-error`
-* `npm install`
-
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* `yarn install`
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
 * `ember test --server`
 
-## Building
+## Notes
 
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+The error appears to be caused by [ember-cli-stylelint](https://github.com/billybonks/ember-cli-stylelint).
+If you run `yarn remove ember-cli-stylelint` and re-run the tests, they pass.
